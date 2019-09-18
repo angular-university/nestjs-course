@@ -1,11 +1,9 @@
 
 ## Ngrx (with NgRx Data) - The Complete Guide
 
-This repository contains the code of the video course [Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.io/course/ngrx-course).
+This repository contains the code of the [NestJs Course](https://angular-university.io/course/nestjs-course).
 
-This course repository is updated to Angular v8 and NgRx 8:
-
-![Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.s3-us-west-1.amazonaws.com/course-images/ngrx-v2.png)
+![NestJs Course](https://angular-university.s3-us-west-1.amazonaws.com/course-images/nestjs-v2.png)
 
 
 # Installation pre-requisites
@@ -86,6 +84,13 @@ We can checkout the remote branch and start tracking it with a local branch that
 It's also possible to download a ZIP file for a given branch,  using the branch dropdown on this page on the top left, and then selecting the Clone or Download / Download as ZIP button.
 
 # Other Courses
+
+# NgRx (with NgRx Data) - The Complete Guide
+
+If you are looking for the [Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.io/course/ngrx-course), the repo with the full code can be found here:
+
+![Ngrx (with NgRx Data) - The Complete Guide](https://angular-university.s3-us-west-1.amazonaws.com/course-images/ngrx-v2.png)
+
 
 # Angular Core Deep Dive Course
 
