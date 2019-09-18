@@ -1,0 +1,38 @@
+
+
+.title {
+    text-align: center;
+    margin-right: 15px;
+
+}
+
+.courses-panel {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+
+.counters {
+    display: flex;
+}
+
+.filler {
+    flex: 1 1 auto;
+}
+
+h2 {
+  font-family: "Roboto";
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.spinner-container {
+  margin-top: 100px;
+}
