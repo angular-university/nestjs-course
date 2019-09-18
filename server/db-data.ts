@@ -13,7 +13,7 @@ export const COURSES: any = {
 
   14: {
     id: 14,
-    description: "NestJs - It's like Angular but for the backend",
+    description: "NestJs - it's like Angular for the backend",
     longDescription: 'Build a modern REST backend using Typescript and the familiar Angular API.',
     iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/nestjs-v2.png',
     category: 'BEGINNER',
