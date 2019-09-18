@@ -6,9 +6,7 @@ import { MatInputModule } from "@angular/material/input";
 import {RouterModule} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
-import { StoreModule } from '@ngrx/store';
 import {AuthService} from "./auth.service";
-import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
     imports: [
