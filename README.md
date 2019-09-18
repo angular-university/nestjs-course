@@ -1,5 +1,5 @@
 
-## Ngrx (with NgRx Data) - The Complete Guide
+## NestJs Course
 
 This repository contains the code of the [NestJs Course](https://angular-university.io/course/nestjs-course).
 
