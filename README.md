@@ -1,7 +1,7 @@
 
-## NestJs Course
+## NestJs In Practice Course
 
-This repository contains the code of the [NestJs Course](https://angular-university.io/course/nestjs-course).
+This repository contains the code of the [NestJs In Practice Course](https://angular-university.io/course/nestjs-course).
 
 ![NestJs Course](https://angular-university.s3-us-west-1.amazonaws.com/course-images/nestjs-v2.png)
 
