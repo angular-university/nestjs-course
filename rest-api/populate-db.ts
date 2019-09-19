@@ -16,20 +16,44 @@ const client = new MongoClient(url);
 // Use connect method to connect to the Server
 client.connect(async (err, client) => {
 
-  if (err) {
-    console.log("Error connecting to database, please check the username and password, exiting.");
+  try {
+
+    if (err) {
+      console.log("Error connecting to database, please check the username and password, exiting.");
+      process.exit();
+    }
+
+    console.log("Connected correctly to server");
+
+    const db = client.db(dbName);
+
+    const courses = findAllCourses();
+
+    for (let i = 0; i < courses.length; i++) {
+
+      const course = courses[i];
+
+      const newCourse: any = {...course};
+      delete newCourse.id;
+
+      console.log("Inserting course ",  newCourse);
+
+      const result = await db.collection('courses').insertOne(newCourse);
+
+      console.log("insertedId", result.insertedId);
+
+    }
+
+    console.log('Finished uploading data, exiting.');
+    client.close();
+    process.exit();
+
+  }
+  catch (error) {
+    console.log("Error caught, exiting: ", error);
+    client.close();
     process.exit();
   }
-
-  console.log("Connected correctly to server");
-
-  const db = client.db(dbName);
-
-  await db.collection('courses').insertMany(findAllCourses());
-
-  console.log('Finished uploading data, exiting.');
-
-  process.exit();
 
 });
 
