@@ -1,12 +1,19 @@
+
 import { Module } from '@nestjs/common';
-import {CoursesController} from './controllers/courses.controller';
+import {CoursesModule} from './courses/courses.module';
+import {MongooseModule} from '@nestjs/mongoose';
+import {MONGO_CONNECTION} from './constants';
+import * as mongoose from 'mongoose';
+import {DatabaseModule} from './database/database.module';
 
 
 @Module({
-  imports: [],
-  controllers: [
-    CoursesController
+  imports: [
+    CoursesModule,
+    DatabaseModule,
+    MongooseModule.forRoot(MONGO_CONNECTION)
   ],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}
