@@ -11,7 +11,6 @@ export const USERS = {
 
 export const COURSES: any = {
 
-
   14: {
     id: 14,
     description: "NestJs In Practice Course",
@@ -618,6 +617,11 @@ export const LESSONS = {
 
 
 };
+
+
+export function findAllCourses() {
+  return Object.values(COURSES);
+}
 
 
 export function findCourseById(courseId: number) {
