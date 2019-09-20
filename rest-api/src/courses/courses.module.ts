@@ -2,7 +2,7 @@ import {Module} from '@nestjs/common';
 import {MongooseModule} from '@nestjs/mongoose';
 import {CoursesController} from './controllers/courses.controller';
 import {CourseSchema} from './schemas/course.schema';
-import {CoursesService} from './services/courses.service';
+import {CoursesRepository} from './services/courses-repository.service';
 
 
 @Module({
@@ -15,7 +15,7 @@ import {CoursesService} from './services/courses.service';
     CoursesController
   ],
   providers: [
-    CoursesService
+    CoursesRepository
   ],
 })
 export class CoursesModule {}

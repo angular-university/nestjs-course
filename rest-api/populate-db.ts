@@ -62,7 +62,12 @@ client.connect(async (err, client) => {
 
     }
 
-    console.log('Finished uploading data, exiting.');
+    console.log('Finished uploading data, creating indexes.');
+
+    await db.collection('courses').createIndex( { "url": 1 }, { unique: true } );
+
+    console.log("Finished creating indexes, exiting.");
+
     client.close();
     process.exit();
 

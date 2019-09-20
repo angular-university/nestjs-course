@@ -6,7 +6,7 @@ import {InjectModel} from '@nestjs/mongoose';
 
 
 @Injectable()
-export class CoursesService {
+export class CoursesRepository {
 
   constructor(@InjectModel('Course') private courseModel: Model<Course>) {
 
@@ -16,4 +16,7 @@ export class CoursesService {
     return this.courseModel.find();
   }
 
+  async findCoursesByUrl(courseUrl: string): Promise<Course[]> {
+    return this.courseModel.find({url:courseUrl});
+  }
 }
