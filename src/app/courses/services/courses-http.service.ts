@@ -38,7 +38,7 @@ export class CoursesHttpService {
 
 
     updateCourse(courseId: number | string, changes: Partial<Course>) {
-        return this.http.put('/api/course/' + courseId, changes);
+        return this.http.put('/api/courses/' + courseId, changes);
     }
 
 

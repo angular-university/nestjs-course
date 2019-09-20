@@ -1,4 +1,4 @@
-import {Controller, Get, HttpException, Param} from '@nestjs/common';
+import {Body, Controller, Get, HttpException, Param, Put} from '@nestjs/common';
 import {CoursesRepository} from '../services/courses-repository.service';
 import {Course} from '../../../../shared/course';
 
@@ -12,6 +12,9 @@ export class CoursesController {
 
   @Get()
   async findAllCourses(): Promise<Course[]> {
+
+    console.log("Finding all courses");
+
     return this.coursesDb.findAll();
   }
 
@@ -20,13 +23,27 @@ export class CoursesController {
 
     console.log("Finding by courseUrl", courseUrl);
 
-    const results = await this.coursesDb.findCoursesByUrl(courseUrl);
+    const course = await this.coursesDb.findCourseByUrl(courseUrl);
 
-    if (results.length == 0) {
+    if (!course) {
     throw new HttpException("Could not find course for url " + courseUrl, 404);
     }
 
-    return results[0];
+    return course;
+
+  }
+
+
+  @Put(":courseId")
+  async updateCourse(@Param("courseId") courseId:number, @Body() changes: Partial<Course>) : Promise<Course> {
+
+    console.log("updating course");
+
+    if (changes) {
+
+    }
+
+    return this.coursesDb.updateCourse(courseId, changes);
 
   }
 

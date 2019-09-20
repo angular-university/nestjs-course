@@ -35,7 +35,7 @@ export class CourseComponent implements OnInit {
     this.course$ = this.coursesService.findCourseByUrl(courseUrl);
 
     this.lessons$ = this.course$.pipe(
-      concatMap(course => this.coursesService.findLessons(course.id)),
+      concatMap(course => this.coursesService.findLessons(course._id)),
       tap(console.log)
     );
 

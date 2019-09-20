@@ -58,12 +58,11 @@ export class EditCourseDialogComponent {
 
   onSave() {
 
-    const course: Course = {
-      ...this.course,
+    const changes: Partial<Course> = {
       ...this.form.value
     };
 
-    this.coursesService.updateCourse(course.id, course)
+    this.coursesService.updateCourse(this.course._id, changes)
       .subscribe(
         () => this.dialogRef.close()
       )
