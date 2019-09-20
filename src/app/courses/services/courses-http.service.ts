@@ -32,7 +32,7 @@ export class CoursesHttpService {
 
         return this.http.get<Lesson[]>('/api/lessons', {
             params: new HttpParams()
-                .set('courseId', courseId.toString())
+                .set('courseId', courseId)
                 .set('sortOrder', 'asc')
                 .set('pageNumber', pageNumber.toString())
                 .set('pageSize', pageSize.toString())

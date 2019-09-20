@@ -5,6 +5,7 @@ import {CourseSchema} from './schemas/course.schema';
 import {CoursesRepository} from './repositories/courses-repository';
 import {LessonsRepository} from './repositories/lessons.repository';
 import {LessonSchema} from './schemas/lesson.schema';
+import {LessonsController} from './controllers/lessons.controller';
 
 
 @Module({
@@ -15,7 +16,8 @@ import {LessonSchema} from './schemas/lesson.schema';
     ])
   ],
   controllers: [
-    CoursesController
+    CoursesController,
+    LessonsController
   ],
   providers: [
     CoursesRepository,

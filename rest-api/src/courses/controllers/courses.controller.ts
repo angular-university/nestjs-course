@@ -48,15 +48,18 @@ export class CoursesController {
 
   @Delete(":courseId")
   async deleteCourse(@Param("courseId") courseId:string) {
+
+    console.log("deleting course");
+
     return this.coursesDb.deleteCourse(courseId);
   }
 
   @Post()
   async createCourse(@Body() course:Partial<Course>) {
 
-    const newCourse = await this.coursesDb.addCourse(course);
+    console.log("creating new course");
 
-    return newCourse;
+    return this.coursesDb.addCourse(course);
   }
 
 

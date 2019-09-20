@@ -1,10 +1,11 @@
 import {Controller, Get, HttpException, Query} from '@nestjs/common';
+import {LessonsRepository} from '../repositories/lessons.repository';
 
 
 @Controller("lessons")
 export class LessonsController {
 
-  constructor() {
+  constructor(private lessonsDb: LessonsRepository) {
 
   }
 
@@ -16,6 +17,8 @@ export class LessonsController {
     @Query('pageSize') pageSize:string
   ) {
 
+    console.log("searching for lessons");
+
     if (!courseId) {
        throw new HttpException("courseId must be defined", 500);
     }
@@ -24,8 +27,7 @@ export class LessonsController {
       throw new HttpException('sortOrder must be asc or desc', 500);
     }
 
-
-
+    return this.lessonsDb.search(courseId, sortOrder, parseInt(pageNumber), parseInt(pageSize));
 
   }
 
