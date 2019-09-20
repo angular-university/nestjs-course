@@ -20,8 +20,12 @@ export class CoursesRepository {
     return this.courseModel.findOne({url:courseUrl});
   }
 
-  async updateCourse(courseId: number, changes: Partial<Course>): Promise<Course> {
+  async updateCourse(courseId: string, changes: Partial<Course>): Promise<Course> {
     return this.courseModel.findOneAndUpdate({ _id: courseId }, changes, {new:true});
+  }
+
+  deleteCourse(courseId: string) {
+    return this.courseModel.deleteOne({_id: courseId});
   }
 
 }

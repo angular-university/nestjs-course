@@ -24,7 +24,7 @@ export class CoursesHttpService {
     }
 
     findLessons(
-        courseId:number,
+        courseId:string,
         pageNumber = 0, pageSize = 3):  Observable<Lesson[]> {
 
         return this.http.get<Lesson[]>('/api/lessons', {
@@ -37,9 +37,12 @@ export class CoursesHttpService {
     }
 
 
-    updateCourse(courseId: number | string, changes: Partial<Course>) {
+    updateCourse(courseId: string, changes: Partial<Course>) {
         return this.http.put('/api/courses/' + courseId, changes);
     }
 
 
+  deleteCourse(courseId: string) {
+      return this.http.delete('/api/courses/' + courseId);
+  }
 }

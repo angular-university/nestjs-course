@@ -1,6 +1,6 @@
 
 export interface Course {
-  _id: number;
+  _id: string;
   seqNo:number;
   url:string;
   iconUrl: string;
