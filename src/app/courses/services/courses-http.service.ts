@@ -3,7 +3,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Course} from "../../../../shared/course";
+import {compareCourses, Course} from '../../../../shared/course';
 import {map} from "rxjs/operators";
 import {Lesson} from "../../../../shared/lesson";
 
@@ -16,7 +16,10 @@ export class CoursesHttpService {
     }
 
     findAllCourses(): Observable<Course[]> {
-        return this.http.get<Course[]>('/api/courses');
+        return this.http.get<Course[]>('/api/courses')
+          .pipe(
+            map(courses => courses.sort(compareCourses))
+          );
     }
 
     findCourseByUrl(courseUrl: string): Observable<Course> {

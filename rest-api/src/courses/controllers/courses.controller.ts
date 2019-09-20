@@ -1,6 +1,6 @@
 import {Body, Controller, Delete, Get, HttpException, Param, Post, Put} from '@nestjs/common';
-import {CoursesRepository} from '../services/courses-repository.service';
 import {Course} from '../../../../shared/course';
+import {CoursesRepository} from '../repositories/courses-repository';
 
 
 @Controller("courses")
