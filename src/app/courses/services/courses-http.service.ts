@@ -16,10 +16,7 @@ export class CoursesHttpService {
     }
 
     findAllCourses(): Observable<Course[]> {
-        return this.http.get('/api/courses')
-            .pipe(
-                map(res => res['payload'])
-            );
+        return this.http.get<Course[]>('/api/courses');
     }
 
     findCourseByUrl(courseUrl: string): Observable<Course> {
@@ -40,7 +37,7 @@ export class CoursesHttpService {
     }
 
 
-    saveCourse(courseId: number | string, changes: Partial<Course>) {
+    updateCourse(courseId: number | string, changes: Partial<Course>) {
         return this.http.put('/api/course/' + courseId, changes);
     }
 
