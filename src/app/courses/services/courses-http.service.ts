@@ -45,4 +45,8 @@ export class CoursesHttpService {
   deleteCourse(courseId: string) {
       return this.http.delete('/api/courses/' + courseId);
   }
+
+  createCourse(changes: Partial<Course>) {
+      return this.http.post('/api/courses', changes);
+  }
 }

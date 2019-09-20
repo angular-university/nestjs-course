@@ -36,7 +36,7 @@ export class EditCourseDialogComponent {
       description: ['', Validators.required],
       category: ['', Validators.required],
       longDescription: ['', Validators.required],
-      promo: ['', []]
+      promo: [false, []]
     };
 
     if (this.mode == 'update') {
@@ -62,10 +62,20 @@ export class EditCourseDialogComponent {
       ...this.form.value
     };
 
-    this.coursesService.updateCourse(this.course._id, changes)
-      .subscribe(
-        () => this.dialogRef.close()
-      )
+    if (this.mode == 'update') {
+      this.coursesService.updateCourse(this.course._id, changes)
+        .subscribe(
+          course => this.dialogRef.close(course)
+        )
+    }
+    else if (this.mode == "create") {
+      this.coursesService.createCourse(changes)
+        .subscribe(
+          course => this.dialogRef.close(course)
+        )
+
+    }
+
 
 
   }

@@ -72,7 +72,13 @@ export class HomeComponent implements OnInit {
       mode: 'create'
     };
 
-    this.dialog.open(EditCourseDialogComponent, dialogConfig);
+    this.dialog.open(EditCourseDialogComponent, dialogConfig)
+      .afterClosed()
+      .subscribe(data => {
+        if (data) {
+          this.reload();
+        }
+      });
 
   }
 

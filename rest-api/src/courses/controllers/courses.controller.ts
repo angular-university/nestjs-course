@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, HttpException, Param, Put} from '@nestjs/common';
+import {Body, Controller, Delete, Get, HttpException, Param, Post, Put} from '@nestjs/common';
 import {CoursesRepository} from '../services/courses-repository.service';
 import {Course} from '../../../../shared/course';
 
@@ -48,10 +48,15 @@ export class CoursesController {
 
   @Delete(":courseId")
   async deleteCourse(@Param("courseId") courseId:string) {
-
     return this.coursesDb.deleteCourse(courseId);
+  }
 
+  @Post()
+  async createCourse(@Body() course:Partial<Course>) {
 
+    const newCourse = await this.coursesDb.addCourse(course);
+
+    return newCourse;
   }
 
 

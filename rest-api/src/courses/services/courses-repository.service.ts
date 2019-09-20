@@ -28,4 +28,8 @@ export class CoursesRepository {
     return this.courseModel.deleteOne({_id: courseId});
   }
 
+  addCourse(course: Partial<Course>) {
+    return this.courseModel.create(course).lean();
+  }
+
 }
