@@ -6,7 +6,10 @@ export const LessonSchema = new mongoose.Schema({
   description: String,
   duration: String,
   seqNo: Number,
-  courseId: String
+  course: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Course'
+  },
 });
 
 

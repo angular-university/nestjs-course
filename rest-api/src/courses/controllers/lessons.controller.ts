@@ -12,12 +12,10 @@ export class LessonsController {
   @Get()
   async searchLessons(
     @Query('courseId') courseId:string,
-    @Query('sortOrder') sortOrder:string,
-    @Query('pageNumber') pageNumber:string,
-    @Query('pageSize') pageSize:string
+    @Query('sortOrder') sortOrder = "asc",
+    @Query('pageNumber') pageNumber = "0",
+    @Query('pageSize') pageSize = "3"
   ) {
-
-    console.log("searching for lessons");
 
     if (!courseId) {
        throw new HttpException("courseId must be defined", 500);

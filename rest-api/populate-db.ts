@@ -3,6 +3,7 @@ import {findAllCourses, findLessonsForCourse} from './db-data';
 console.log("Populating the MongoDB database with some sample data ...");
 
 const MongoClient = require('mongodb').MongoClient;
+var ObjectId = require('mongodb').ObjectID;
 
 // Connection URL - replace with your own email and password
 const url = 'mongodb+srv://nestjs:ZeEjdswOWHwoenQO@cluster0-dbucq.gcp.mongodb.net';
@@ -52,7 +53,8 @@ client.connect(async (err, client) => {
 
         const newLesson:any = {...lesson};
         delete newLesson.id;
-        newLesson.courseId = courseId;
+        delete newLesson.courseId;
+        newLesson.course = new ObjectId(courseId);
 
         console.log("Inserting lesson", newLesson);
 
