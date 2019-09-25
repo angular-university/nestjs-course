@@ -625,8 +625,78 @@ export const LESSONS = {
     "duration": "9:10",
     "seqNo": 10,
     courseId: 4
-  }
+  },
 
+  60: {
+    id:60,
+    "description": "Introduction to NestJs",
+    "duration": "4:29",
+    "seqNo": 1,
+    courseId: 14
+  },
+  61: {
+    id:61,
+    "description": "Development Environment Setup",
+    "duration": "6:37",
+    "seqNo": 2,
+    courseId: 14
+  },
+  62: {
+    id:62,
+    "description": "Setting up a MongoDB Database",
+    "duration": "6:38",
+    "seqNo": 3,
+    courseId: 14
+  },
+  63: {
+    id:63,
+    "description": "CRUD with NestJs - Controllers and Repositories",
+    "duration": "12:12",
+    "seqNo": 4,
+    courseId: 14
+  },
+  64: {
+    id:64,
+    "description": "First REST endpoint - Get All Courses",
+    "duration": "3:42",
+    "seqNo": 5,
+    courseId: 14
+  },
+  65: {
+    id:65,
+    "description": "Error Handling",
+    "duration": "5:15",
+    "seqNo": 6,
+    courseId: 14
+  },
+  66: {
+    id:66,
+    "description": "NestJs Middleware",
+    "duration": "7:08",
+    "seqNo": 7,
+    courseId: 14
+  },
+  67: {
+    id:67,
+    "description": "Authentication in NestJs",
+    "duration": "13:22",
+    "seqNo": 8,
+    courseId: 14
+  },
+  68: {
+    id:68,
+    "description": "Authorization in NestJs",
+    "duration": "6:43",
+    "seqNo": 9,
+    courseId: 14
+  },
+  69: {
+    id:69,
+    "description": "Guards & Interceptors",
+    "duration": "8:16",
+    "seqNo": 10,
+    courseId: 14
+  }
 
 };
 
