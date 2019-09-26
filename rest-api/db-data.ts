@@ -14,7 +14,7 @@ export const COURSES: any = {
   14: {
     id: 14,
     description: "NestJs In Practice Course",
-    longDescription: 'Build a modern REST backend using Typescript and the familiar Angular API.',
+    longDescription: 'Build a modern REST backend using Typescript, MongoDB and the familiar Angular API.',
     iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/nestjs-v2.png',
     category: 'BEGINNER',
     lessonsCount: 10,
