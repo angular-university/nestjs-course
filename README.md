@@ -53,6 +53,8 @@ This should take a couple of minutes. If there are issues, please post the compl
 
 We can start the sample application backend with the following command:
 
+    cd rest-api 
+    npm install
     npm run server
 
 This is a small Node REST API server.
