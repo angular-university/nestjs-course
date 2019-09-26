@@ -1,8 +1,9 @@
-import {Controller, Get, HttpException, Query} from '@nestjs/common';
+import {BadRequestException, Controller, Get, HttpException, HttpStatus, Query, UseFilters} from '@nestjs/common';
 import {LessonsRepository} from '../repositories/lessons.repository';
 
 
 @Controller("lessons")
+//@UseFilters(new GlobalExceptionFilter())
 export class LessonsController {
 
   constructor(private lessonsDb: LessonsRepository) {
@@ -18,11 +19,11 @@ export class LessonsController {
   ) {
 
     if (!courseId) {
-       throw new HttpException("courseId must be defined", 500);
+       throw new BadRequestException("courseId must be defined");
     }
 
     if (sortOrder != 'asc' && sortOrder != "desc") {
-      throw new HttpException('sortOrder must be asc or desc', 500);
+      throw new BadRequestException('sortOrder must be asc or desc');
     }
 
     return this.lessonsDb.search(courseId, sortOrder, parseInt(pageNumber), parseInt(pageSize));

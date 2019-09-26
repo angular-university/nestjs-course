@@ -1,4 +1,16 @@
-import {Body, Controller, Delete, Get, HttpException, Param, Post, Put} from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpException,
+  HttpStatus,
+  NotFoundException,
+  Param,
+  Post,
+  Put
+} from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {CoursesRepository} from '../repositories/courses-repository';
 
@@ -26,7 +38,7 @@ export class CoursesController {
     const course = await this.coursesDb.findCourseByUrl(courseUrl);
 
     if (!course) {
-      throw new HttpException("Could not find course for url " + courseUrl, 404);
+      throw new NotFoundException("Could not find course for url " + courseUrl);
     }
 
     return course;
@@ -40,7 +52,7 @@ export class CoursesController {
     console.log("updating course");
 
     if (changes._id) {
-        throw new HttpException("Can't update course Id ", 500);
+        throw new BadRequestException("Can't update course Id ");
     }
 
     return this.coursesDb.updateCourse(courseId, changes);
