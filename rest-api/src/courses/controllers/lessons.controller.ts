@@ -1,4 +1,4 @@
-import {BadRequestException, Controller, Get, HttpException, HttpStatus, Query, UseFilters} from '@nestjs/common';
+import {BadRequestException, Controller, Get, HttpException, HttpStatus, ParseIntPipe, Query, UseFilters} from '@nestjs/common';
 import {LessonsRepository} from '../repositories/lessons.repository';
 
 
@@ -14,8 +14,8 @@ export class LessonsController {
   async searchLessons(
     @Query('courseId') courseId:string,
     @Query('sortOrder') sortOrder = "asc",
-    @Query('pageNumber') pageNumber = "0",
-    @Query('pageSize') pageSize = "3"
+    @Query('pageNumber', ParseIntPipe) pageNumber = 0,
+    @Query('pageSize', ParseIntPipe) pageSize = 3
   ) {
 
     if (!courseId) {
@@ -26,7 +26,7 @@ export class LessonsController {
       throw new BadRequestException('sortOrder must be asc or desc');
     }
 
-    return this.lessonsDb.search(courseId, sortOrder, parseInt(pageNumber), parseInt(pageSize));
+    return this.lessonsDb.search(courseId, sortOrder, pageNumber, pageSize);
 
   }
 
