@@ -30,9 +30,15 @@ export class CoursesRepository {
 
   async addCourse(course: Partial<Course>) {
 
-    const result = await this.courseModel.create(course);
+    // another way of creating a model, when we want to save it immediatelly
+    //const result = await this.courseModel.create(course);
 
-    return result.toObject({versionKey:false});
+    // this allows to manipulate the model in memory, before saving it
+    const newCourse = this.courseModel(course);
+
+    await newCourse.save();
+
+    return newCourse.toObject({versionKey:false});
   }
 
 }
