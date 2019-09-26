@@ -30,7 +30,7 @@ export class CoursesRepository {
 
   async addCourse(course: Partial<Course>) {
 
-    // another way of creating a model, when we want to save it immediatelly
+    // another way of creating a model, when we want to save it immediately
     //const result = await this.courseModel.create(course);
 
     // this allows to manipulate the model in memory, before saving it
