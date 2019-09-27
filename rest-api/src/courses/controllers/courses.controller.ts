@@ -10,6 +10,8 @@ export class CoursesController {
     @Get('/api/courses')
     async findAllCourses(): Promise<Course[]> {
 
+        debugger;
+
         return findAllCourses();
 
     }
