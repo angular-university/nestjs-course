@@ -702,7 +702,7 @@ export const LESSONS = {
 
 
 export function findAllCourses() {
-  return Object.values(COURSES);
+  return <any[]> Object.values(COURSES);
 }
 
 
