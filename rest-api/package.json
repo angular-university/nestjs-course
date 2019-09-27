@@ -13,7 +13,7 @@
     "start:local": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/rest-api/src/main.js\"",
     "server": "run-s clean start:local",
     "start:debug": "tsc-watch -p tsconfig.build.json --onSuccess \"node --inspect-brk dist/rest-api/src/main.js\"",
-    "start:prod": "node dist/main.js",
+    "start:prod": "node dist/rest-api/src/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "test": "jest",
     "test:watch": "jest --watch",
