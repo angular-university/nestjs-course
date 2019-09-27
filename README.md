@@ -43,10 +43,6 @@ This repository is made of several separate npm modules, that are installable se
     cd nestjs-course
     npm install
 
-Its also possible to install the modules as usual using npm:
-
-    npm install 
-
 This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.
 
 # To Run the Development Backend Server
@@ -57,7 +53,7 @@ We can start the sample application backend with the following command:
     npm install
     npm run server
 
-This is a small Node REST API server.
+This launches a small Node REST API server, built using NestJs. Notice that this has a separate package.json, so you really need to run a second npm install from inside the rest-api directory.
 
 # To run the Development UI Server
 
