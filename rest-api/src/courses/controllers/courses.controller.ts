@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Put, Req, Res} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Put, Req, Res} from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {findAllCourses} from '../../../db-data';
 import {CoursesRepository} from '../repositories/courses.repository';
@@ -26,6 +26,14 @@ export class CoursesController {
         console.log("updating course");
 
         return this.coursesDB.updateCourse(courseId, changes);
+    }
+
+    @Delete(':courseId')
+    async deleteCourse(@Param("courseId") courseId:string) {
+
+        console.log("deleting course " + courseId);
+
+        return this.coursesDB.deleteCourse(courseId);
     }
 
 

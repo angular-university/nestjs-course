@@ -24,6 +24,10 @@ export class CoursesRepository {
             changes,
             {new:true});
     }
+
+    deleteCourse(courseId: string) {
+        return this.courseModel.deleteOne({_id:courseId});
+    }
 }
 
 
