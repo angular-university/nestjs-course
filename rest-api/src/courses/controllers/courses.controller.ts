@@ -26,7 +26,6 @@ export class CoursesController {
         console.log("updating course");
 
         return this.coursesDB.updateCourse(courseId, changes);
-
     }
 
 
