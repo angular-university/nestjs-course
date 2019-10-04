@@ -28,7 +28,25 @@ export class CoursesRepository {
     deleteCourse(courseId: string) {
         return this.courseModel.deleteOne({_id:courseId});
     }
+
+    async addCourse(course: Partial<Course>): Promise<Course> {
+
+        const newCourse = this.courseModel(course);
+
+        await newCourse.save();
+
+        return newCourse.toObject({versionKey:false});
+
+    }
 }
+
+
+
+
+
+
+
+
 
 
 
