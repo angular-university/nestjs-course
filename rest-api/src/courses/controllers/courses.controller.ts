@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post, Put, Req, Res} from '@nestjs/common';
+import {BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Post, Put, Req, Res} from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {findAllCourses} from '../../../db-data';
 import {CoursesRepository} from '../repositories/courses.repository';
@@ -33,6 +33,10 @@ export class CoursesController {
         @Body() changes: Partial<Course>):Promise<Course> {
 
         console.log("updating course");
+
+        if (changes._id) {
+            throw new BadRequestException("Can't update course id");
+        }
 
         return this.coursesDB.updateCourse(courseId, changes);
     }
