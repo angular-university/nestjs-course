@@ -1,8 +1,9 @@
-import {BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Post, Put, Req, Res} from '@nestjs/common';
+import {BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Post, Put, Req, Res, UseFilters} from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {findAllCourses} from '../../../db-data';
 import {CoursesRepository} from '../repositories/courses.repository';
 import {Request, Response} from 'express';
+import {HttpExceptionFilter} from '../../filters/http.filter';
 
 
 

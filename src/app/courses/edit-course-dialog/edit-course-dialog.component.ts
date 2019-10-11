@@ -62,9 +62,6 @@ export class EditCourseDialogComponent {
       ...this.form.value
     };
 
-    //TODO simulated bug
-    changes._id = "1";
-
     if (this.mode == 'update') {
       this.coursesService.updateCourse(this.course._id, changes)
         .subscribe(
