@@ -4,7 +4,8 @@ import {findAllCourses} from '../../../db-data';
 import {CoursesRepository} from '../repositories/courses.repository';
 import {Request, Response} from 'express';
 import {HttpExceptionFilter} from '../../filters/http.filter';
-
+import {ToIntegerPipe} from '../../pipes/to-integer.pipe';
+import {ParseIntPipe} from "@nestjs/common";
 
 
 @Controller("courses")
@@ -31,9 +32,14 @@ export class CoursesController {
     @Put(':courseId')
     async updateCourse(
         @Param("courseId") courseId:string,
+        @Body("seqNo", ParseIntPipe) seqNo: number,
         @Body() changes: Partial<Course>):Promise<Course> {
 
         console.log("updating course");
+
+        console.log("seqNo value " + seqNo + ", type: " +
+            typeof seqNo);
+
 
         if (changes._id) {
             throw new BadRequestException("Can't update course id");
