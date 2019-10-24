@@ -1,4 +1,4 @@
-import {findAllCourses, findLessonsForCourse} from './db-data';
+import {findAllCourses, findAllUsers, findLessonsForCourse} from './db-data';
 
 console.log("Populating the MongoDB database with some sample data ...");
 
@@ -80,6 +80,23 @@ client.connect(async (err, client) => {
         await db.collection("lessons").insertOne(newLesson);
 
       }
+
+    }
+
+    const users = findAllUsers();
+
+    console.log("Inserting users " + users.length);
+
+    for (let j = 0; j< users.length; j++) {
+
+      const user = users[j];
+
+      const newUser:any = {...user};
+      delete newUser.id;
+
+      console.log("Inserting user", newUser);
+
+      await db.collection("users").insertOne(newUser);
 
     }
 

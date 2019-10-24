@@ -2,10 +2,14 @@
 export const USERS = {
   1: {
     id: 1,
-    email: 'test@angular-university.io',
-    password: 'test'
+    email: 'student@angular-university.io',
+    passwordHash: '$2b$10$4JqIokrEqDvGAYV7stk3feOix94p3KmUXDLGVVxKubI8/bo2sm3ca'
+  },
+  2: {
+    id: 2,
+    email: 'admin@angular-university.io',
+    passwordHash: '$2b$10$4JqIokrEqDvGAYV7stk3feOix94p3KmUXDLGVVxKubI8/bo2sm3ca'
   }
-
 };
 
 
@@ -13,14 +17,14 @@ export const COURSES: any = {
 
   14: {
     id: 14,
-    description: "NestJs In Practice Course",
+    description: 'NestJs In Practice Course',
     longDescription: 'Build a modern REST backend using Typescript, MongoDB and the familiar Angular API.',
     iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/nestjs-v2.png',
     category: 'BEGINNER',
     lessonsCount: 10,
     seqNo: 0,
     url: 'nestjs-course',
-    promo:false
+    promo: false
   },
   4: {
     id: 4,
@@ -31,7 +35,7 @@ export const COURSES: any = {
     lessonsCount: 10,
     seqNo: 1,
     url: 'ngrx-course',
-    promo:false
+    promo: false
   },
 
   2: {
@@ -43,7 +47,7 @@ export const COURSES: any = {
     category: 'BEGINNER',
     seqNo: 2,
     url: 'angular-core-course',
-    promo:false
+    promo: false
   },
 
   3: {
@@ -55,7 +59,7 @@ export const COURSES: any = {
     lessonsCount: 10,
     seqNo: 3,
     url: 'rxjs-course',
-    promo:false
+    promo: false
   },
 
   1: {
@@ -67,7 +71,7 @@ export const COURSES: any = {
     category: 'BEGINNER',
     seqNo: 4,
     url: 'serverless-angular',
-    promo:false
+    promo: false
   },
 
   /*
@@ -95,7 +99,7 @@ export const COURSES: any = {
     seqNo: 6,
     url: 'angular-testing-course',
     lessonsCount: 10,
-    promo:false
+    promo: false
   },
 
   6: {
@@ -107,7 +111,7 @@ export const COURSES: any = {
     lessonsCount: 11,
     seqNo: 7,
     url: 'angular-security-course',
-    promo:false
+    promo: false
   },
 
   7: {
@@ -119,7 +123,7 @@ export const COURSES: any = {
     lessonsCount: 8,
     seqNo: 8,
     url: 'angular-pwa-course',
-    promo:false
+    promo: false
   },
 
   8: {
@@ -130,7 +134,7 @@ export const COURSES: any = {
     category: 'ADVANCED',
     seqNo: 9,
     url: 'angular-advanced-course',
-    promo:false
+    promo: false
   },
 
   9: {
@@ -141,7 +145,7 @@ export const COURSES: any = {
     category: 'BEGINNER',
     seqNo: 10,
     url: 'typescript-course',
-    promo:false
+    promo: false
   },
 
   10: {
@@ -152,7 +156,7 @@ export const COURSES: any = {
     category: 'BEGINNER',
     seqNo: 11,
     url: 'rxjs-patterns-course',
-    promo:false
+    promo: false
   },
 
   11: {
@@ -163,7 +167,7 @@ export const COURSES: any = {
     category: 'BEGINNER',
     seqNo: 12,
     url: 'angular-material-course',
-    promo:false
+    promo: false
   }
 
 };
@@ -556,150 +560,153 @@ export const LESSONS = {
   // Ngrx Course
   50: {
     id: 50,
-    "description": "Welcome to the Angular Ngrx Course",
-    "duration": "6:53",
-    "seqNo": 1,
+    'description': 'Welcome to the Angular Ngrx Course',
+    'duration': '6:53',
+    'seqNo': 1,
     courseId: 4
 
   },
   51: {
     id: 51,
-    "description": "The Angular Ngrx Architecture Course - Helicopter View",
-    "duration": "5:52",
-    "seqNo": 2,
+    'description': 'The Angular Ngrx Architecture Course - Helicopter View',
+    'duration': '5:52',
+    'seqNo': 2,
     courseId: 4
   },
   52: {
     id: 52,
-    "description": "The Origins of Flux - Understanding the Famous Facebook Bug Problem",
-    "duration": "8:17",
-    "seqNo": 3,
+    'description': 'The Origins of Flux - Understanding the Famous Facebook Bug Problem',
+    'duration': '8:17',
+    'seqNo': 3,
     courseId: 4
   },
   53: {
     id: 53,
-    "description": "Custom Global Events - Why Don't They Scale In Complexity?",
-    "duration": "7:47",
-    "seqNo": 4,
+    'description': 'Custom Global Events - Why Don\'t They Scale In Complexity?',
+    'duration': '7:47',
+    'seqNo': 4,
     courseId: 4
   },
   54: {
     id: 54,
-    "description": "The Flux Architecture - How Does it Solve Facebook Counter Problem?",
-    "duration": "9:22",
-    "seqNo": 5,
+    'description': 'The Flux Architecture - How Does it Solve Facebook Counter Problem?',
+    'duration': '9:22',
+    'seqNo': 5,
     courseId: 4
   },
   55: {
     id: 55,
-    "description": "Unidirectional Data Flow And The Angular Development Mode",
-    "duration": "7:07",
-    "seqNo": 6,
+    'description': 'Unidirectional Data Flow And The Angular Development Mode',
+    'duration': '7:07',
+    'seqNo': 6,
     courseId: 4
   },
 
   56: {
     id: 56,
-    "description": "Dispatching an Action - Implementing the Login Component",
-    "duration": "4:39",
-    "seqNo": 7,
+    'description': 'Dispatching an Action - Implementing the Login Component',
+    'duration': '4:39',
+    'seqNo': 7,
     courseId: 4
   },
   57: {
     id: 57,
-    "description": "Setting Up the Ngrx DevTools - Demo",
-    "duration": "4:44",
-    "seqNo": 8,
+    'description': 'Setting Up the Ngrx DevTools - Demo',
+    'duration': '4:44',
+    'seqNo': 8,
     courseId: 4
   },
   58: {
     id: 58,
-    "description": "Understanding Reducers - Writing Our First Reducer",
-    "duration": "9:10",
-    "seqNo": 9,
+    'description': 'Understanding Reducers - Writing Our First Reducer',
+    'duration': '9:10',
+    'seqNo': 9,
     courseId: 4
   },
   59: {
     id: 59,
-    "description": "How To Define the Store Initial State",
-    "duration": "9:10",
-    "seqNo": 10,
+    'description': 'How To Define the Store Initial State',
+    'duration': '9:10',
+    'seqNo': 10,
     courseId: 4
   },
 
   60: {
-    id:60,
-    "description": "Introduction to NestJs",
-    "duration": "4:29",
-    "seqNo": 1,
+    id: 60,
+    'description': 'Introduction to NestJs',
+    'duration': '4:29',
+    'seqNo': 1,
     courseId: 14
   },
   61: {
-    id:61,
-    "description": "Development Environment Setup",
-    "duration": "6:37",
-    "seqNo": 2,
+    id: 61,
+    'description': 'Development Environment Setup',
+    'duration': '6:37',
+    'seqNo': 2,
     courseId: 14
   },
   62: {
-    id:62,
-    "description": "Setting up a MongoDB Database",
-    "duration": "6:38",
-    "seqNo": 3,
+    id: 62,
+    'description': 'Setting up a MongoDB Database',
+    'duration': '6:38',
+    'seqNo': 3,
     courseId: 14
   },
   63: {
-    id:63,
-    "description": "CRUD with NestJs - Controllers and Repositories",
-    "duration": "12:12",
-    "seqNo": 4,
+    id: 63,
+    'description': 'CRUD with NestJs - Controllers and Repositories',
+    'duration': '12:12',
+    'seqNo': 4,
     courseId: 14
   },
   64: {
-    id:64,
-    "description": "First REST endpoint - Get All Courses",
-    "duration": "3:42",
-    "seqNo": 5,
+    id: 64,
+    'description': 'First REST endpoint - Get All Courses',
+    'duration': '3:42',
+    'seqNo': 5,
     courseId: 14
   },
   65: {
-    id:65,
-    "description": "Error Handling",
-    "duration": "5:15",
-    "seqNo": 6,
+    id: 65,
+    'description': 'Error Handling',
+    'duration': '5:15',
+    'seqNo': 6,
     courseId: 14
   },
   66: {
-    id:66,
-    "description": "NestJs Middleware",
-    "duration": "7:08",
-    "seqNo": 7,
+    id: 66,
+    'description': 'NestJs Middleware',
+    'duration': '7:08',
+    'seqNo': 7,
     courseId: 14
   },
   67: {
-    id:67,
-    "description": "Authentication in NestJs",
-    "duration": "13:22",
-    "seqNo": 8,
+    id: 67,
+    'description': 'Authentication in NestJs',
+    'duration': '13:22',
+    'seqNo': 8,
     courseId: 14
   },
   68: {
-    id:68,
-    "description": "Authorization in NestJs",
-    "duration": "6:43",
-    "seqNo": 9,
+    id: 68,
+    'description': 'Authorization in NestJs',
+    'duration': '6:43',
+    'seqNo': 9,
     courseId: 14
   },
   69: {
-    id:69,
-    "description": "Guards & Interceptors",
-    "duration": "8:16",
-    "seqNo": 10,
+    id: 69,
+    'description': 'Guards & Interceptors',
+    'duration': '8:16',
+    'seqNo': 10,
     courseId: 14
   }
 
 };
 
+export function findAllUsers() {
+  return <any[]> Object.values(USERS);
+}
 
 export function findAllCourses() {
   return Object.values(COURSES);
