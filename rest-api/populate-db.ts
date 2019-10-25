@@ -1,5 +1,9 @@
 import {findAllCourses, findAllUsers, findLessonsForCourse} from './db-data';
 
+const util = require('util');
+
+const password = require('password-hash-and-salt');
+
 console.log("Populating the MongoDB database with some sample data ...");
 
 const MongoClient = require('mongodb').MongoClient;
@@ -93,6 +97,12 @@ client.connect(async (err, client) => {
 
       const newUser:any = {...user};
       delete newUser.id;
+
+      const hashPassword = util.promisify(password(newUser.password).hash);
+
+      newUser.passwordHash = await hashPassword();
+
+      delete newUser.password;
 
       console.log("Inserting user", newUser);
 

@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "clean": "rimraf dist",
-    "run-populate-db": "node ./dist/rest-api/populate-db.js",
+    "run-populate-db": "node ./dist/populate-db.js",
     "populate-db": "run-s clean build run-populate-db",
     "start:local": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/rest-api/src/main.js\"",
     "server": "run-s clean start:local",
@@ -33,6 +33,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.1",
     "npm-run-all": "^4.1.5",
+    "password-hash-and-salt": "^0.1.4",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.0",
     "rxjs": "6.5.2"

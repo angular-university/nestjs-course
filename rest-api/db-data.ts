@@ -3,13 +3,13 @@ export const USERS = {
   1: {
     id: 1,
     email: 'student@angular-university.io',
-    passwordHash: '$2b$10$4JqIokrEqDvGAYV7stk3feOix94p3KmUXDLGVVxKubI8/bo2sm3ca',
+    password: 'password',
     roles: ['STUDENT']
   },
   2: {
     id: 2,
     email: 'admin@angular-university.io',
-    passwordHash: '$2b$10$4JqIokrEqDvGAYV7stk3feOix94p3KmUXDLGVVxKubI8/bo2sm3ca',
+    password: 'password',
     roles: ['ADMIN']
   }
 };

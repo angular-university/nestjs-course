@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
       this.form = fb.group({
           email: ['student@angular-university.io', [Validators.required]],
-          password: ['test', [Validators.required]]
+          password: ['password', [Validators.required]]
       });
 
   }
