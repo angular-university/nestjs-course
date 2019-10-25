@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "clean": "rimraf dist",
-    "run-populate-db": "node ./dist/populate-db.js",
+    "run-populate-db": "node ./dist/rest-api/populate-db.js",
     "populate-db": "run-s clean build run-populate-db",
     "start:local": "tsc-watch -p tsconfig.build.json --onSuccess \"node dist/rest-api/src/main.js\"",
     "server": "run-s clean start:local",
