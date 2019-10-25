@@ -1,4 +1,18 @@
-import {BadRequestException, Body, Controller, Delete, Get, HttpException, Param, Post, Put, Req, Res, UseFilters} from '@nestjs/common';
+import {
+    BadRequestException,
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpException,
+    NotFoundException,
+    Param,
+    Post,
+    Put,
+    Req,
+    Res,
+    UseFilters
+} from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {findAllCourses} from '../../../db-data';
 import {CoursesRepository} from '../repositories/courses.repository';
@@ -28,6 +42,23 @@ export class CoursesController {
     async findAllCourses(): Promise<Course[]> {
         return this.coursesDB.findAll();
     }
+
+    @Get(":courseUrl")
+    async findCourseByUrl(@Param("courseUrl") courseUrl:string) {
+
+        console.log("Finding by courseUrl", courseUrl);
+
+        const course = await this.coursesDB.findCourseByUrl(courseUrl);
+
+        if (!course) {
+            throw new NotFoundException(
+                "Could not find course for url " + courseUrl);
+        }
+
+        return course;
+    }
+
+
 
     @Put(':courseId')
     async updateCourse(
