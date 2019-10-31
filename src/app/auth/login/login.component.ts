@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
       this.form = fb.group({
           email: ['student@angular-university.io', [Validators.required]],
-          password: ['test', [Validators.required]]
+          password: ['password', [Validators.required]]
       });
 
   }
@@ -32,6 +32,22 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
+      const val = this.form.value;
+
+      this.auth.login(val.email, val.password)
+          .subscribe(
+              () => {
+
+                  this.router.navigateByUrl('/courses');
+
+              },
+              err => {
+                  console.log("Login failed:", err);
+                  alert('Login failed.');
+              }
+          );
+
 
   }
 
