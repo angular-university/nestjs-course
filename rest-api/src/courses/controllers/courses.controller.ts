@@ -11,7 +11,7 @@ import {
     Put,
     Req,
     Res,
-    UseFilters
+    UseFilters, UseGuards
 } from '@nestjs/common';
 import {Course} from '../../../../shared/course';
 import {findAllCourses} from '../../../db-data';
@@ -20,9 +20,11 @@ import {Request, Response} from 'express';
 import {HttpExceptionFilter} from '../../filters/http.filter';
 import {ToIntegerPipe} from '../../pipes/to-integer.pipe';
 import {ParseIntPipe} from "@nestjs/common";
+import {AuthenticationGuard} from '../../guards/authentication.guard';
 
 
 @Controller("courses")
+@UseGuards(AuthenticationGuard)
 export class CoursesController {
 
     constructor(private coursesDB: CoursesRepository) {
