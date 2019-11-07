@@ -21,6 +21,7 @@ import {HttpExceptionFilter} from '../../filters/http.filter';
 import {ToIntegerPipe} from '../../pipes/to-integer.pipe';
 import {ParseIntPipe} from "@nestjs/common";
 import {AuthenticationGuard} from '../../guards/authentication.guard';
+import {AdminGuard} from '../../guards/admin.guard';
 
 
 @Controller("courses")
@@ -32,6 +33,7 @@ export class CoursesController {
     }
 
     @Post()
+    @UseGuards(AdminGuard)
     async createCourse(@Body() course:Course)
         : Promise<Course> {
 
@@ -63,6 +65,7 @@ export class CoursesController {
 
 
     @Put(':courseId')
+    @UseGuards(AdminGuard)
     async updateCourse(
         @Param("courseId") courseId:string,
         @Body() changes: Course):Promise<Course> {
@@ -77,6 +80,7 @@ export class CoursesController {
     }
 
     @Delete(':courseId')
+    @UseGuards(AdminGuard)
     async deleteCourse(@Param("courseId") courseId:string) {
 
         console.log("deleting course " + courseId);
