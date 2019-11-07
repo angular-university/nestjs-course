@@ -5,14 +5,33 @@ console.log("Populating the MongoDB database with some sample data ...");
 const MongoClient = require('mongodb').MongoClient;
 var ObjectId = require('mongodb').ObjectID;
 
-// Connection URL - replace with your own email and password
-const url = 'mongodb+srv://nestjs:ZeEjdswOWHwoenQO@cluster0-dbucq.gcp.mongodb.net';
+
+/*****************************************************************************************************
+*
+*
+* IMPORTANT!!!
+*
+* MongoDB Connection URL - create your own url with the right cluster name, username, password and database name
+*
+* Format: mongodb+srv://username:password@clustername
+*
+* Example (don't use this as you don't have write access):
+*
+* mongodb+srv://nestjs:ZeEjdswOWHwoenQO@cluster0-dbucq.gcp.mongodb.net
+*
+*****************************************************************************************************/
+
+const MONGODB_CONNECTION_URL = 'mongodb+srv://nestjs-admin:BSFGkUY7T0XcJfpI@cluster0-4r2ye.mongodb.net/test?retryWrites=true&w=majority';
 
 // Database Name
 const dbName = 'nestjs-course';
 
+
+
+
+
 // Create a new MongoClient
-const client = new MongoClient(url);
+const client = new MongoClient(MONGODB_CONNECTION_URL);
 
 // Use connect method to connect to the Server
 client.connect(async (err, client) => {

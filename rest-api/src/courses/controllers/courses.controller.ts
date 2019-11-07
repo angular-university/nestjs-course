@@ -1,78 +1,93 @@
 import {
-  BadRequestException,
-  Body,
-  Controller,
-  Delete,
-  Get,
-  HttpException,
-  HttpStatus,
-  NotFoundException,
-  Param,
-  Post,
-  Put
+    BadRequestException,
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpException,
+    NotFoundException,
+    Param,
+    Post,
+    Put,
+    Req,
+    Res,
+    UseFilters, UseGuards
 } from '@nestjs/common';
 import {Course} from '../../../../shared/course';
-import {CoursesRepository} from '../repositories/courses-repository';
+import {findAllCourses} from '../../../db-data';
+import {CoursesRepository} from '../repositories/courses.repository';
+import {Request, Response} from 'express';
+import {HttpExceptionFilter} from '../../filters/http.filter';
+import {ToIntegerPipe} from '../../pipes/to-integer.pipe';
+import {ParseIntPipe} from "@nestjs/common";
+import {AuthenticationGuard} from '../../guards/authentication.guard';
+import {AdminGuard} from '../../guards/admin.guard';
 
 
 @Controller("courses")
+@UseGuards(AuthenticationGuard)
 export class CoursesController {
 
-  constructor(private coursesDb: CoursesRepository) {
+    constructor(private coursesDB: CoursesRepository) {
 
-  }
-
-  @Get()
-  async findAllCourses(): Promise<Course[]> {
-
-    console.log("Finding all courses");
-
-    return this.coursesDb.findAll();
-  }
-
-  @Get(':courseUrl')
-  async findCourseByUrl(@Param('courseUrl') courseUrl:string): Promise<Course> {
-
-    console.log("Finding by courseUrl", courseUrl);
-
-    const course = await this.coursesDb.findCourseByUrl(courseUrl);
-
-    if (!course) {
-      throw new NotFoundException("Could not find course for url " + courseUrl);
     }
 
-    return course;
+    @Post()
+    @UseGuards(AdminGuard)
+    async createCourse(@Body() course:Course)
+        : Promise<Course> {
 
-  }
+        console.log("creating new course");
 
-
-  @Put(":courseId")
-  async updateCourse(@Param("courseId") courseId:string, @Body() changes: Partial<Course>) : Promise<Course> {
-
-    console.log("updating course");
-
-    if (changes._id) {
-        throw new BadRequestException("Can't update course Id ");
+        return this.coursesDB.addCourse(course);
     }
 
-    return this.coursesDb.updateCourse(courseId, changes);
-  }
+    @Get()
+    async findAllCourses(): Promise<Course[]> {
+        return this.coursesDB.findAll();
+    }
 
-  @Delete(":courseId")
-  async deleteCourse(@Param("courseId") courseId:string) {
+    @Get(":courseUrl")
+    async findCourseByUrl(@Param("courseUrl") courseUrl:string) {
 
-    console.log("deleting course");
+        console.log("Finding by courseUrl", courseUrl);
 
-    return this.coursesDb.deleteCourse(courseId);
-  }
+        const course = await this.coursesDB.findCourseByUrl(courseUrl);
 
-  @Post()
-  async createCourse(@Body() course:Partial<Course>) {
+        if (!course) {
+            throw new NotFoundException(
+                "Could not find course for url " + courseUrl);
+        }
 
-    console.log("creating new course");
+        return course;
+    }
 
-    return this.coursesDb.addCourse(course);
-  }
+
+
+    @Put(':courseId')
+    @UseGuards(AdminGuard)
+    async updateCourse(
+        @Param("courseId") courseId:string,
+        @Body() changes: Course):Promise<Course> {
+
+        console.log("updating course");
+
+        if (changes._id) {
+            throw new BadRequestException("Can't update course id");
+        }
+
+        return this.coursesDB.updateCourse(courseId, changes);
+    }
+
+    @Delete(':courseId')
+    @UseGuards(AdminGuard)
+    async deleteCourse(@Param("courseId") courseId:string) {
+
+        console.log("deleting course " + courseId);
+
+        return this.coursesDB.deleteCourse(courseId);
+    }
+
 
 
 }

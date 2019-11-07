@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
       private router:Router) {
 
       this.form = fb.group({
-          email: ['test@angular-university.io', [Validators.required]],
-          password: ['test', [Validators.required]]
+          email: ['student@angular-university.io', [Validators.required]],
+          password: ['password', [Validators.required]]
       });
 
   }
@@ -32,6 +32,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
+      const val = this.form.value;
+
+      this.auth.login(val.email, val.password)
+          .subscribe(
+              (reply:any) => {
+
+                  localStorage.setItem("authJwtToken",
+                      reply.authJwtToken);
+
+                  this.router.navigateByUrl('/courses');
+
+              },
+              err => {
+                  console.log("Login failed:", err);
+                  alert('Login failed.');
+              }
+          );
+
 
   }
 
