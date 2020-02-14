@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {Lesson} from '../../../../shared/lesson';
 import {concatMap, delay, filter, first, map, shareReplay, switchMap, tap, withLatestFrom} from 'rxjs/operators';
 import {CoursesHttpService} from '../services/courses-http.service';
-import {MatPaginator, PageEvent} from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class CourseComponent implements OnInit {
   @ViewChildren(MatPaginator)
   paginators: QueryList<MatPaginator>;
 
-  @ViewChild(MatPaginator, {static:false})
+  @ViewChild(MatPaginator)
   paginator: MatPaginator;
 
   constructor(

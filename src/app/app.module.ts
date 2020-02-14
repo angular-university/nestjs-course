@@ -14,7 +14,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {AuthModule} from './auth/auth.module';
 import {environment} from '../environments/environment';
-import {MatProgressSpinnerModule} from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {AuthInterceptor} from './auth/auth.interceptor';
 
 
