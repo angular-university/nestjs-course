@@ -8,7 +8,7 @@ This repository contains the code of the [NestJs In Practice Course](https://ang
 
 # Installation pre-requisites
 
-For taking the course we recommend installing Node 12. These are some tutorials to install node in different operating systems:
+For taking the course we recommend installing Node 14. These are some tutorials to install node in different operating systems:
 
 - [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
 - [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
