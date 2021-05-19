@@ -31,7 +31,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "npm-run-all": "^4.1.5",
     "password-hash-and-salt": "^0.1.4",
     "reflect-metadata": "0.1.13",
