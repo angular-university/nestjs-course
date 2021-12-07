@@ -8,7 +8,7 @@ This repository contains the code of the [NestJs In Practice Course](https://ang
 
 # Installation pre-requisites
 
-For taking the course we recommend installing Node 14. 
+For taking the course we recommend installing Node 16. 
 
 To easily switch between node versions on your machine, we recommend using a node virtual environment tool such as [nave](https://www.npmjs.com/package/nave) or [nvm-windows](https://github.com/coreybutler/nvm-windows), depending on your operating system. 
 
@@ -17,9 +17,9 @@ For example, here is how you switch to a new node version using nave:
     # note that you don't even need to update your node version before installing nave
     npm install -g nave
     
-    nave use 14.15.0
+    nave use 16.13.0
     node -v
-    v14.15.0
+    v16.13.0
 
 # Installing the Angular CLI
 
