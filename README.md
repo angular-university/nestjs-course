@@ -8,11 +8,7 @@ This repository contains the code of the [NestJs In Practice Course](https://ang
 
 # Installation pre-requisites
 
-For taking the course we recommend installing Node 14. These are some tutorials to install node in different operating systems:
-
-- [Install Node and NPM on Windows](https://www.youtube.com/watch?v=8ODS6RM6x7g)
-- [Install Node and NPM on Linux](https://www.youtube.com/watch?v=yUdHk-Dk_BY)
-- [Install Node and NPM on Mac](https://www.youtube.com/watch?v=Imj8PgG3bZU)
+For taking the course we recommend installing Node 16. 
 
 To easily switch between node versions on your machine, we recommend using a node virtual environment tool such as [nave](https://www.npmjs.com/package/nave) or [nvm-windows](https://github.com/coreybutler/nvm-windows), depending on your operating system. 
 
@@ -21,9 +17,9 @@ For example, here is how you switch to a new node version using nave:
     # note that you don't even need to update your node version before installing nave
     npm install -g nave
     
-    nave use 12.3.1
+    nave use 16.13.0
     node -v
-    v12.3.1
+    v16.13.0
 
 # Installing the Angular CLI
 
@@ -43,10 +39,6 @@ This repository is made of several separate npm modules, that are installable se
     cd nestjs-course
     npm install
 
-Its also possible to install the modules as usual using npm:
-
-    npm install 
-
 This should take a couple of minutes. If there are issues, please post the complete error message in the Questions section of the course.
 
 # To Run the Development Backend Server
@@ -57,7 +49,7 @@ We can start the sample application backend with the following command:
     npm install
     npm run server
 
-This is a small Node REST API server.
+This launches a small Node REST API server, built using NestJs. Notice that this has a separate package.json, so you really need to run a second npm install from inside the rest-api directory.
 
 # To run the Development UI Server
 
