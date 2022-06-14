@@ -39,41 +39,40 @@ export const coursesRoutes: Routes = [
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatTabsModule,
-    MatInputModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatProgressSpinnerModule,
-    MatSlideToggleModule,
-    MatDialogModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatMomentDateModule,
-    ReactiveFormsModule,
-    RouterModule.forChild(coursesRoutes)
-  ],
-  declarations: [
-    HomeComponent,
-    CoursesCardListComponent,
-    EditCourseDialogComponent,
-    CourseComponent
-  ],
-  exports: [
-    HomeComponent,
-    CoursesCardListComponent,
-    EditCourseDialogComponent,
-    CourseComponent
-  ],
-  entryComponents: [EditCourseDialogComponent],
-  providers: [
-    CoursesHttpService
-  ]
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatIconModule,
+        MatCardModule,
+        MatTabsModule,
+        MatInputModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatProgressSpinnerModule,
+        MatSlideToggleModule,
+        MatDialogModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatMomentDateModule,
+        ReactiveFormsModule,
+        RouterModule.forChild(coursesRoutes)
+    ],
+    declarations: [
+        HomeComponent,
+        CoursesCardListComponent,
+        EditCourseDialogComponent,
+        CourseComponent
+    ],
+    exports: [
+        HomeComponent,
+        CoursesCardListComponent,
+        EditCourseDialogComponent,
+        CourseComponent
+    ],
+    providers: [
+        CoursesHttpService
+    ]
 })
 export class CoursesModule {
 
