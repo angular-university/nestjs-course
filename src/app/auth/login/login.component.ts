@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 
 import {AuthService} from "../auth.service";
 import {tap} from "rxjs/operators";
@@ -13,10 +13,10 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   constructor(
-      private fb:FormBuilder,
+      private fb:UntypedFormBuilder,
       private auth: AuthService,
       private router:Router) {
 
