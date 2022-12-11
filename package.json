@@ -30,7 +30,7 @@
     "body-parser": "^1.18.2",
     "class-validator": "^0.13.2",
     "core-js": "^2.4.1",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "moment": "^2.22.2",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.0",
