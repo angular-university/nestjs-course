@@ -28,7 +28,7 @@
     "@nestjs/core": "^7.5.5",
     "@nestjs/platform-express": "^7.5.5",
     "body-parser": "^1.18.2",
-    "class-validator": "^0.13.2",
+    "class-validator": "^0.14.0",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
     "moment": "^2.22.2",
