@@ -28,7 +28,7 @@
     "@nestjs/mongoose": "^6.1.2",
     "@nestjs/platform-express": "^6.5.3",
     "@nestjs/websockets": "^6.5.3",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.10.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.1",
